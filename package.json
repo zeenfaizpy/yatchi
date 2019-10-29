@@ -4,7 +4,13 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon app.js -e js,hbs,json,html"
+    "start": "nodemon app.js -e js,hbs,json,html",
+    "migrate:up": "knex-migrate up",
+    "migrate:down": "knex-migrate down",
+    "migrate:list": "knex-migrate list",
+    "migrate:generate": "knex-migrate generate",
+    "seed:make": "knex seed:make",
+    "seed:run": "knex seed:run"
   },
   "repository": {
     "type": "git",
@@ -18,8 +24,12 @@
   },
   "homepage": "https://github.com/zeenfaizpy/yatchi#readme",
   "dependencies": {
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "express-handlebars": "^3.1.0"
+    "express-handlebars": "^3.1.0",
+    "knex": "^0.20.0",
+    "knex-migrate": "^1.7.4",
+    "pg": "^7.12.1"
   },
   "devDependencies": {
     "nodemon": "^1.19.1"
